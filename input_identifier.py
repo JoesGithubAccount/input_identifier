@@ -9,9 +9,9 @@ loc_search = re.compile(r'^\d{1,2}(Q|q|p|P)\d*.\d*$')
 gao_search = re.compile(r'^[a-zA-Z]{1}\d{5}[.]?\d*$')
 gan_search = re.compile(r'^[a-zA-Z]{2}\d{6}[.]?\d*$')
 #gene identifier seems to be 4 characters starting with letters
-gid_search = re.compile(r'^')
+gid_search = re.compile(r'^\w{4,5}')
 #protein product name follows much looser characteristics "else"
-ppn_search = re.compile(r'^')
+#ppn_search = re.compile(r'^')
 
 for line in test:
 	#print(line)
@@ -34,9 +34,9 @@ for line in test:
 	if thing != None:
 		print(thing, "gene id")
 	else:
-		pass
-	thing = ppn_search.search(line)
-	if thing != None:
-		print(thing, "protein product name")
-	else:
-		print("No match")
+		print(thing, "protein product probably")
+	#thing = ppn_search.search(line)
+	#if thing != None:
+	#	print(thing, "protein product name")
+	#else:
+	#	print("No match")
