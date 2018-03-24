@@ -5,10 +5,12 @@ with open("test_data.txt", 'r') as f:
 
 #the chromosomal location format follows the format "number(s) letter numbers"
 locus_search = re.compile(r'^\d{1,2}(Q|q|p|P)\d*.\d*')
-	#don't want multiple p or q to be allowed, also don't want other letters allowed
-#the Genbank accession number follows the format ""
-#protein product name 
-#gene identifier
+#the Genbank accession number follows the format "letter5number/2letter6number(nucleotide) 3letter5number(protein)"
+acc_search = re.compile(r'^')
+#gene identifier seems to be 4 characters starting with letters
+gi_search = re.compile(r'^')
+#protein product name follows much looser characteristics "else"
+ppn_search = re.compile(r'^')
 
 for line in test:
 	#print(line)
